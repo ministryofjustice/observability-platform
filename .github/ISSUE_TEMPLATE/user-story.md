@@ -4,7 +4,6 @@ about: A common structure to desribe user stories
 title: ''
 labels: ''
 assignees: ''
-
 ---
 
 ## User Story
@@ -20,12 +19,12 @@ assignees: ''
 ## Assumptions / Hypothesis / Questions / Unknowns
 
 <!-- Additional information to explain approach taken
-### Hypothesis 
+### Hypothesis
 If we... [do a thing]
 Then... [this will happ]
 
 ### Proposal
-A proposal that is something testable, don't worry whether it works or not, it's a place for ideas. 
+A proposal that is something testable, don't worry whether it works or not, it's a place for ideas.
 
 ### Unknowns
 Potential pitfalls that could cause the story to expand beyond its original scope. Ideally this section will remain blank.

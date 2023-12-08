@@ -1,0 +1,8 @@
+{
+  "absolute": true,
+  "ignore": [
+    "*.svg"
+  ],
+  "reporters": ["consoleFull"],
+  "threshold": 0
+}

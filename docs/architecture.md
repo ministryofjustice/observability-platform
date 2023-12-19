@@ -18,7 +18,7 @@ The current implementation has two environments:
 - `alpha`
 
 All non-production workloads (e.g. `development`, `test`, `staging`, `nonproduction`) will publish to `development`,
-while production workloads (e.g `production`) will publish to `production`.
+while production workloads (e.g `production`) will publish to `alpha`.
 
 
 ## Deployment

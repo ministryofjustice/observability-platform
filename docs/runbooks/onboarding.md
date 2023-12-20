@@ -19,6 +19,9 @@
 
     - GitHub team name (used for access control)
 
+      - Note: If the team is a parent of other teams, child team's members will be included as part of the parent team's members,
+        this is a quirk of <https://github.com/ministryofjustice/moj-terraform-scim-github>
+
     - Account names
 
 1. Observabilty Platform creates tenant configuration in Modernisation Platform ([`observability-platform/environment-configurations.tf`](https://github.com/ministryofjustice/modernisation-platform-environments/blob/main/terraform/environments/observability-platform/environment-configurations.tf))

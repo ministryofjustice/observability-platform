@@ -1,4 +1,4 @@
-# Modernisation Platform - Architecture Decisions
+# Observability Platform - Architecture Decisions
 
 This is our architecture decision log, made during the design and build of the Observability Platform.
 

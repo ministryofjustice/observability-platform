@@ -18,7 +18,7 @@
     - Team name (e.g. Data Platform)
 
     - GitHub team name (used for access control)
-  
+
       - Note: If the team is a parent of other teams, child team's members will be included as part of the parent team's members,
         this is a quirk of <https://github.com/ministryofjustice/moj-terraform-scim-github>
 

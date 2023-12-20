@@ -6,7 +6,7 @@ The current core offering is to provide one central UI (AMG) for visualising mul
 
 Additionally the platform offers a central metric store (AMP), allowing tenants to remote write data for consumption in the same central UI (AMG).
 
-![Observability Platform](./src/architecture/architecture.svg)
+![Observability Platform](./src/architecture.svg)
 
 
 ## Environments

@@ -2,7 +2,7 @@
 
 This runbook provides instructions on how to rotate an API Key in Grafana. This need to be done every 30 days. If it is not done you will see errors such as this:
 
-```
+```bash
 │ Error: the Grafana client is required for `grafana_data_source`. Set the auth and url provider attributes
 │
 │   with module.cloudwatch_sources["data-platform-preproduction"].grafana_data_source.this,
@@ -12,7 +12,7 @@ This runbook provides instructions on how to rotate an API Key in Grafana. This 
 ╵
 ```
 
-### Instructions
+## Instructions
 
 Follow these steps to rotate an API Key:
 
@@ -40,6 +40,6 @@ Follow these steps to rotate an API Key:
 
 Repeat these steps for both `dev` and `alpha` environments.
 
-### Automation
+## Automation
 
 An [issue](https://github.com/ministryofjustice/observability-platform/issues/18) has been created to automate this process.

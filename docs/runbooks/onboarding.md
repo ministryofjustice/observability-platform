@@ -10,6 +10,7 @@
       version = "<see https://registry.terraform.io/modules/ministryofjustice/observability-platform-tenant/aws/latest for latest>"
 
       observability_platform_account_id = local.environment_management.account_ids["observability-platform-${ENVIRONMENT}"]
+      enable_xray                       = true
     }
     ```
 

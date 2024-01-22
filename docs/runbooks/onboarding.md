@@ -15,7 +15,7 @@
 
 1. Tenant provides the following information to Observability Platform
 
-    - Team name (e.g. Data Platform)
+    - Tenant name (e.g. Data Platform)
 
     - GitHub team name (used for access control)
 
@@ -27,14 +27,16 @@
 1. Observabilty Platform creates tenant configuration in Modernisation Platform ([`observability-platform/environment-configurations.tf`](https://github.com/ministryofjustice/modernisation-platform-environments/blob/main/terraform/environments/observability-platform/environment-configurations.tf))
 
     ```hcl
-    observability_platform_configuration = {
-      "team-name" = {
-        sso_uuid = "<Retrieve this from AWS Identity Center>"
-          cloudwatch_accounts = [
-            "account-name-x",
-            "account-name-y",
-            "account-name-z"
-          ]
+    tenant_configuration = {
+      "tenant-name" = {
+        identity_centre_team = "<Retrieve this from AWS Identity Center>"
+        aws_accounts = {
+          "observability-platform-production" = {
+            cloudwatch_enabled      = true
+            prometheus_push_enabled = true
+            xray_enabled            = true
+          }
+        }
       }
     }
     ```

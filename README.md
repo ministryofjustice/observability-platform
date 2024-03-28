@@ -5,7 +5,6 @@
 > [!IMPORTANT]
 > The service is currently in discovery phase and subject to change.
 
-
 ## About this repository
 
 This is the Ministry of Justice Observability Platform team's repository for documentation and tracking enhancements, feature requests and issues.
@@ -16,6 +15,9 @@ This is the Ministry of Justice Observability Platform team's repository for doc
 
 | Name | Description |
 |:---:|:---:|
+| [`observability-platform-grafana-key-rotator`](https://github.com/ministryofjustice/observability-platform-grafana-key-rotator) | Observability Platform Grafana key rotator |
+| [`observability-platform-user-guidance`](https://github.com/ministryofjustice/observability-platform-user-guidance) | Observability Platform user guidance |
+| [`observability-platform-runbooks`](https://github.com/ministryofjustice/observability-platform-runbooks) | Observability Platform runbooks |
 | [`terraform-aws-observability-platform-tenant`](https://github.com/ministryofjustice/terraform-aws-observability-platform-tenant) | Terraform module for creating Observability Platform tenant resources |
 
 ### Contributing

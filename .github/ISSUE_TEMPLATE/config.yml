@@ -1,0 +1,7 @@
+---
+blank_issues_enabled: false
+
+contact_links:
+  - name: "#ask-observability-platform"
+    url: https://moj.enterprise.slack.com/archives/C05QXHR697S
+    about: Ask the Observability Platform team a question

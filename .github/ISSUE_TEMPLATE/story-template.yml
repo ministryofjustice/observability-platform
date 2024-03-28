@@ -1,7 +1,7 @@
-name: Observability Platform Story
-description: 📖 Create new Observability Platform story
-title: "[gitmoji] <title>"
-labels: ["enhancement"]
+name: 📖 Story
+description: Create a story
+title: "📖 <title>"
+labels: ["story"]
 body:
   - type: markdown
     attributes:

@@ -15,7 +15,7 @@ This is the Ministry of Justice Observability Platform team's repository for doc
 
 | Name | Description |
 |:---:|:---:|
-| [`observability-platform-grafana-key-rotator`](https://github.com/ministryofjustice/observability-platform-grafana-key-rotator) | Observability Platform Grafana key rotator |
+| [`observability-platform-grafana-api-key-rotator`](https://github.com/ministryofjustice/observability-platform-grafana-api-key-rotator) | Observability Platform Grafana API key rotator |
 | [`observability-platform-user-guidance`](https://github.com/ministryofjustice/observability-platform-user-guidance) | Observability Platform user guidance |
 | [`observability-platform-runbooks`](https://github.com/ministryofjustice/observability-platform-runbooks) | Observability Platform runbooks |
 | [`terraform-aws-observability-platform-tenant`](https://github.com/ministryofjustice/terraform-aws-observability-platform-tenant) | Terraform module for creating Observability Platform tenant resources |

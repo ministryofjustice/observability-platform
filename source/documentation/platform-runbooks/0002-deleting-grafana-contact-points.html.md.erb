@@ -1,0 +1,34 @@
+---
+title: Deleting Grafana Contact Points
+last_reviewed_on: 2024-04-04
+review_in: 3 months
+---
+
+# <%= current_page.data.title %>
+
+## Metadata
+
+| ID   | Created       | Author          | Status       |
+|:----:|:-------------:|:---------------:|:------------:|
+| 0002 | 08/04/2024    | Jacob Woffenden | 🟡 In Review |
+
+Grafana's notification policy tree is dependenct on contact points in Terraform, therefore you cannot delete a contact point until
+it is removed from the notifaction policy tree.
+
+To workaround this, a script has been created, which can be executed from [`modernisation-platform-environments`](https://github.com/ministryofjustice/modernisation-platform-environments).
+
+1. Launch `modernisation-platform-environments` [dev container](https://github.com/ministryofjustice/modernisation-platform-environments/tree/main/.devcontainer)
+
+1. Change directory into `observability-platform`
+
+    ```bash
+    cd terraform/environments/observability-platform
+    ```
+
+1. Run the script
+
+    ```bash
+    bash contrib/delete-contact-point.sh ${stage} ${contact_point_name}
+    ```
+
+1. Remove the contact point from Observability Platform's Terraform [environment configuration](https://github.com/ministryofjustice/modernisation-platform-environments/blob/main/terraform/environments/observability-platform/environment-configurations.tf).

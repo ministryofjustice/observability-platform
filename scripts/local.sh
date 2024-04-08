@@ -13,7 +13,7 @@ package | preview)
   ;;
 esac
 
-if [[ "$(uname -m)" == "aarch64" ]] || [[ "$(uname -m)" == "arm64" ]]; then
+if [[ "$(uname --machine)" == "aarch64" ]] || [[ "$(uname --machine)" == "arm64" ]]; then
   PLATFORM_FLAG="--platform=linux/amd64"
 else
   PLATFORM_FLAG=""

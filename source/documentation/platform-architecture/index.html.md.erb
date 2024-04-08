@@ -6,3 +6,33 @@ weight: 0
 ---
 
 # <%= current_page.data.title %>
+
+At it's core, Observability Platform is [Amazon Managed Grafana](https://aws.amazon.com/grafana/) (AMG), which offers a serverless (as in we don't have to run infrastructure for it) single pane of glass view of onboarded account's [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/), and other SaaS services which offer an integration, such as GitHub or ServiceNow.
+
+Additionally Observability Platform also offers:
+
+- Integration with [AWS X-Ray](https://aws.amazon.com/xray/).
+
+- A central metric store, [Amazon Managed Prometheus](https://aws.amazon.com/prometheus/) (AMP).
+
+- Alerting with PagerDuty and Slack.
+
+## High Level Diagram
+
+![Observability Platform](./src/architecture.svg)
+
+## Environments
+
+Observability Platform has two environments:
+
+- `development`
+
+- `production`, a.k.a `alpha`
+
+All non-production workloads (e.g. `development`, `test`, `preproduction`) will publish to `development`.
+
+All production workloads (e.g `production`) will publish to `alpha`.
+
+## Deployment
+
+Observability Platform is deployed to [Modernisation Platform](https://user-guide.modernisation-platform.service.justice.gov.uk/), our source is available [here](https://github.com/ministryofjustice/modernisation-platform-environments/tree/main/terraform/environments/observability-platform).

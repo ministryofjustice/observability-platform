@@ -18,9 +18,10 @@ formatted_next_adr_number=$(printf "%04d" $next_adr_number)
 # User inputs
 echo -n "Enter the ADR title: "
 read adr_title
+echo $adr_title
 echo -n "Enter the Proposer's name: "
 read proposer_name
-
+echo $proposer_name
 # Date
 current_date=$(date +%Y-%m-%d)
 
@@ -40,10 +41,13 @@ fi
 # Read and modify the template
 modified_content=$(awk -v title="$adr_title" -v date="$current_date" -v proposer="$proposer_name" -v adr_id="$formatted_next_adr_number" '
     BEGIN { OFS=FS=":" }
-    $1 == "title" { $2=" " title; print; next }
-    $1 == "last_reviewed_on" { $2=" " date; print; next }
-    /<%= current_page.data.title %>/ { sub(/0001/, adr_id); print; next }
-    /<proposer>/ { sub(/<proposer>/, proposer); print; next }
+    {
+        gsub(/<title>/, title);
+        gsub(/<current-date>/, date);
+        gsub(/<proposer>/, proposer);
+        gsub(/<id>/, adr_id);
+    }
+    /<%= current_page.data.title %>/{ gsub(/0001/, adr_id); }
     { print }
 ' "$template_path")
 

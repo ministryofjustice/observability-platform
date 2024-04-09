@@ -18,7 +18,7 @@ formatted_next_adr_number=$(printf "%04d" $next_adr_number)
 # User inputs
 echo -n 'Enter the ADR title: '
 read -r adr_title
-echo -n 'Enter the Proposer's name: '
+echo -n 'Enter the Proposer'\''s name: '
 read -r proposer_name
 
 # Date
@@ -47,8 +47,7 @@ modified_content=$(awk -v title="$adr_title" -v date="$current_date" -v proposer
         gsub(/<id>/, adr_id);
     }
     /<%= current_page.data.title %>/{ gsub(/0001/, adr_id); }
-    { print }
-' "$template_path")
+    { print }' "$template_path")
 
 # Write the modified content to the new file
 echo "$modified_content" > "$filename"

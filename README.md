@@ -13,7 +13,7 @@ This is the Ministry of Justice Observability Platform team's repository for doc
 
 To add an ADR call the `create-adr.sh` script and respond to the queries:
 
-```
+```bash
 ./scripts/create-adr.sh
 ```
 

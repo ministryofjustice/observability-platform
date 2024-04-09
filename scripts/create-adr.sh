@@ -62,8 +62,8 @@ adr_log_index="${adr_directory}/index.html.md.erb"
 
 # Check if the ADR log index file exists
 if [ ! -f "$adr_log_index" ]; then
-    echo "The ADR log index file does not exist."
-    exit 1
+  echo "The ADR log index file does not exist."
+  exit 1
 fi
 
 # Append the new ADR log entry to the table in the index file
@@ -77,6 +77,6 @@ awk -v new_entry="$new_adr_log_entry" '
         print ""; # Ensure a blank line after the new entry
     }
     { print } # Print all other lines
-' "$adr_log_index" > temp && mv temp "$adr_log_index"
+' "$adr_log_index" >temp && mv temp "$adr_log_index"
 
 echo "Added new ADR log entry to the index file."

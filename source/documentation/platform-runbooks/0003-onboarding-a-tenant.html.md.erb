@@ -1,0 +1,53 @@
+---
+title: Onboarding a Tenant
+last_reviewed_on: 2024-04-04
+review_in: 3 months
+---
+
+# <%= current_page.data.title %>
+
+## Metadata
+
+| ID   | Created       | Author          | Status       |
+|:----:|:-------------:|:---------------:|:------------:|
+| 0003 | 08/04/2024    | Jacob Woffenden | 🟡 In Review |
+
+Currently there is no formal process for onboarding a tenant onto Observability Platform.
+
+The informal process is:
+
+1. Observability Platform agree to onboard tenant.
+
+1. Tenant creates Observability Platform read-only resources in their account(s).
+
+    ```hcl
+    module "observability_platform" {
+      source  = "ministryofjustice/observability-platform-tenant/aws"
+      version = "<see https://registry.terraform.io/modules/ministryofjustice/observability-platform-tenant/aws/latest for latest>"
+
+      observability_platform_account_id = local.environment_management.account_ids["observability-platform-${ENVIRONMENT}"]
+      enable_xray                       = true
+    }
+    ```
+
+1. Tenant provides
+  * Tenant name (e.g. `Analytical Platform`)
+  * GitHub team (e.g. `analytical-platform`)
+  * AWS account(s) and configuration
+
+1. Observabilty Platform creates tenant configuration in `modernisation-platform-environments` ([`observability-platform/environment-configurations.tf`](https://github.com/ministryofjustice/modernisation-platform-environments/blob/main/terraform/environments/observability-platform/environment-configurations.tf))
+
+    ```hcl
+    tenant_configuration = {
+      "tenant-name" = {
+        identity_centre_team = "<Retrieve this from AWS Identity Center>"
+        aws_accounts = {
+          "observability-platform-production" = {
+            cloudwatch_enabled      = true
+            prometheus_push_enabled = true
+            xray_enabled            = true
+          }
+        }
+      }
+    }
+    ```

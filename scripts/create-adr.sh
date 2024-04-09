@@ -6,8 +6,8 @@ adr_directory="${scripts_dir}/../source/documentation/architecture-decision-reco
 
 # Ensure the ADR directory exists
 if [ ! -d "$adr_directory" ]; then
-    echo "The architecture-decision-records directory does not exist."
-    exit 1
+  echo "The architecture-decision-records directory does not exist."
+  exit 1
 fi
 
 # Detect the next ADR number
@@ -16,12 +16,11 @@ next_adr_number=$((latest_adr_number + 1))
 formatted_next_adr_number=$(printf "%04d" $next_adr_number)
 
 # User inputs
-echo -n "Enter the ADR title: "
-read adr_title
-echo $adr_title
-echo -n "Enter the Proposer's name: "
-read proposer_name
-echo $proposer_name
+echo -n 'Enter the ADR title: '
+read -r adr_title
+echo -n 'Enter the Proposer's name: '
+read -r proposer_name
+
 # Date
 current_date=$(date +%Y-%m-%d)
 
@@ -34,8 +33,8 @@ template_path="${scripts_dir}/adr-template.html.md.erb"
 
 # Validate template exists
 if [ ! -f "$template_path" ]; then
-    echo "The template file adr-template.html.md.erb does not exist."
-    exit 1
+  echo "The template file adr-template.html.md.erb does not exist."
+  exit 1
 fi
 
 # Read and modify the template

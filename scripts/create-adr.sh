@@ -50,6 +50,6 @@ modified_content=$(awk -v title="$adr_title" -v date="$current_date" -v proposer
     { print }' "$template_path")
 
 # Write the modified content to the new file
-echo "$modified_content" > "$filename"
+echo "$modified_content" >"$filename"
 
 echo "Template created: $filename"

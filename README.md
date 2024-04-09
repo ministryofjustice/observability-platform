@@ -9,6 +9,14 @@
 
 This is the Ministry of Justice Observability Platform team's repository for documentation and tracking enhancements, feature requests and issues.
 
+## Adding an ADR
+
+To add an ADR call the `create-adr.sh` script and respond to the queries:
+
+```
+./scripts/create-adr.sh
+```
+
 ## Other Observability Platform repositories
 
 | Name | Description |

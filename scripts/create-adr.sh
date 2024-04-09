@@ -53,3 +53,30 @@ modified_content=$(awk -v title="$adr_title" -v date="$current_date" -v proposer
 echo "$modified_content" >"$filename"
 
 echo "Template created: $filename"
+
+# Construct the new line for the ADR log
+new_adr_log_entry="| [${formatted_next_adr_number}](/documentation/architecture-decision-records/${formatted_next_adr_number}-${slugified_title}.html) | ${adr_title} | 🤔 Proposed |"
+
+# File path for the ADR log index
+adr_log_index="${adr_directory}/index.html.md.erb"
+
+# Check if the ADR log index file exists
+if [ ! -f "$adr_log_index" ]; then
+    echo "The ADR log index file does not exist."
+    exit 1
+fi
+
+# Append the new ADR log entry to the table in the index file
+awk -v new_entry="$new_adr_log_entry" '
+    /^[\t ]*$/ {
+        # Skip blank lines: lines that are empty or contain only whitespace (tabs/spaces)
+        next;
+    }
+    /## Statuses/ {
+        print new_entry; # Print the new entry
+        print ""; # Ensure a blank line after the new entry
+    }
+    { print } # Print all other lines
+' "$adr_log_index" > temp && mv temp "$adr_log_index"
+
+echo "Added new ADR log entry to the index file."

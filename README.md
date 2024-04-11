@@ -23,7 +23,6 @@ To add an ADR call the `create-adr.sh` script and respond to the queries:
 |:---:|:---:|
 | [`observability-platform-grafana-api-key-rotator`](https://github.com/ministryofjustice/observability-platform-grafana-api-key-rotator) | Observability Platform Grafana API key rotator |
 | [`observability-platform-user-guide`](https://github.com/ministryofjustice/observability-platform-user-guide) | Observability Platform user guide |
-| [`observability-platform-runbooks`](https://github.com/ministryofjustice/observability-platform-runbooks) | Observability Platform runbooks |
 | [`terraform-aws-observability-platform-tenant`](https://github.com/ministryofjustice/terraform-aws-observability-platform-tenant) | Terraform module for creating Observability Platform tenant resources |
 
 ### Contributing

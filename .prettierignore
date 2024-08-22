@@ -1,4 +1,4 @@
 .devcontainer/*.json
 .github/linters/.jscpd.json
-.github/linters/*.yml
+.github/ISSUE_TEMPLATE/*.yml
 README.md

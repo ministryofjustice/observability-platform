@@ -1,0 +1,4 @@
+.devcontainer/*.json
+.github/linters/.jscpd.json
+.github/linters/*.yml
+README.md

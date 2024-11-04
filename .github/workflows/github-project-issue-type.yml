@@ -1,0 +1,94 @@
+---
+name: 🐙 GitHub Project Issue Type
+
+on:
+  issues:
+    types: [opened]
+
+permissions: {}
+
+env:
+  PROJECT_ID: "PVT_kwDOACGfts4AVFPo" # gh api graphql -f 'query=query{organization(login:"ministryofjustice"){projectV2(number: 44){id}}}' | jq -r '.data.organization.projectV2.id'
+  FIELD_ID: "PVTSSF_lADOACGfts4AVFPozgU4CJs" # gh project field-list 44 --owner ministryofjustice --format json | jq -r '.fields[] | select(.name=="Issue Type") .id'
+
+jobs:
+  update-github-projects-issue-type:
+    runs-on: ubuntu-latest
+    name: Update GitHub Projects Issue Type
+    steps:
+      - name: Check Labels
+        id: check_labels
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          github-token: ${{ secrets.OBSERVABILITY_PLATFORM_BOT_TOKEN }}
+          script: |
+            const issue = context.issue;
+            const labels = context.payload.issue.labels.map(label => label.name);
+
+            // fieldOptionId is the ID of the field option that corresponds to the issue type
+            // this can be obtained from the GitHub API by running
+            // gh project field-list 44 --owner ministryofjustice --format json | jq -r '.fields[] | select(.name=="Type") .options'
+
+            let type;
+            if (labels.includes("bug")) {
+              type = "bug";
+              fieldOptionId = "911c9508";
+            } else if (labels.includes("epic")) {
+              type = "epic";
+              fieldOptionId = "ae8af2c4";
+            } else if (labels.includes("feature-request")) {
+              type = "feature-request";
+              fieldOptionId = "92b9573d";
+            } else if (labels.includes("story")) {
+              type = "story";
+              fieldOptionId = "9d14e00a";
+            } else if (labels.includes("spike")) {
+              type = "spike";
+              fieldOptionId = "2baf6f13";
+            }
+
+            if (type) {
+              console.log(`Issue is a ${type}`);
+              return fieldOptionId;
+            } else {
+              console.log("Issue is not a bug, epic, feature-request, or story");
+              return null;
+            }
+
+      - name: Add to GitHub Project # Even though GitHub Project automation can do this, we need to do it again to get the item ID
+        id: add_to_project
+        env:
+          GITHUB_TOKEN: ${{ secrets.OBSERVABILITY_PLATFORM_BOT_TOKEN }}
+        uses: octokit/graphql-action@8ad880e4d437783ea2ab17010324de1075228110 # v2.3.2
+        with:
+          query: |
+            mutation AddIssueToProject($project_id: ID!, $content_id: ID!) {
+              addProjectV2ItemById(input: { projectId: $project_id, contentId: $content_id }) {
+                  item {
+                    id
+                  }
+                }
+              }
+          variables: |
+            project_id: ${{ env.PROJECT_ID }}
+            content_id: ${{ github.event.issue.node_id }}
+
+      - name: Update Issue Type
+        id: update_issue_type
+        if: steps.check_labels.outputs.result != null
+        env:
+          GITHUB_TOKEN: ${{ secrets.OBSERVABILITY_PLATFORM_BOT_TOKEN }}
+        uses: octokit/graphql-action@8ad880e4d437783ea2ab17010324de1075228110 # v2.3.2
+        with:
+          query: |
+            mutation UpdateIssueType($item_id: ID!, $project_id: ID!, $field_id: ID!, $field_option_id: String) {
+              updateProjectV2ItemFieldValue(
+                input: { itemId: $item_id, projectId: $project_id, fieldId: $field_id, value: { singleSelectOptionId: $field_option_id } }) {
+                  clientMutationId
+                }
+              }
+          variables: |
+            item_id: ${{ fromJSON(steps.add_to_project.outputs.data).addProjectV2ItemById.item.id }}
+            project_id: ${{ env.PROJECT_ID }}
+            field_id: ${{ env.FIELD_ID }}
+            field_option_id: ${{ steps.check_labels.outputs.result }}

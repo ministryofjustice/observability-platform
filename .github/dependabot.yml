@@ -9,6 +9,9 @@ updates:
     commit-message:
       prefix: ":dependabot: github-actions"
       include: "scope"
+    labels:
+      - "dependabot"
+      - "github-actions"
   - package-ecosystem: "devcontainers"
     directory: "/"
     schedule:
@@ -16,3 +19,6 @@ updates:
     commit-message:
       prefix: ":dependabot: devcontainers"
       include: "scope"
+    labels:
+      - "dependabot"
+      - "devcontainers"

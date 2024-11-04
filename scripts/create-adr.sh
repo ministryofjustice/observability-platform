@@ -2,7 +2,7 @@
 
 # Directories
 scripts_dir="$(dirname "$0")"
-adr_directory="${scripts_dir}/../source/documentation/architecture-decision-records"
+adr_directory="${scripts_dir}/../source/architecture-decision-records"
 
 # Ensure the ADR directory exists
 if [ ! -d "$adr_directory" ]; then
@@ -55,7 +55,7 @@ echo "$modified_content" >"$filename"
 echo "Template created: $filename"
 
 # Construct the new line for the ADR log
-new_adr_log_entry="| [${formatted_next_adr_number}](/documentation/architecture-decision-records/${formatted_next_adr_number}-${slugified_title}.html) | ${adr_title} | 🤔 Proposed |"
+new_adr_log_entry="| [${formatted_next_adr_number}](/architecture-decision-records/${formatted_next_adr_number}-${slugified_title}.html) | ${adr_title} | 🤔 Proposed |"
 
 # File path for the ADR log index
 adr_log_index="${adr_directory}/index.html.md.erb"

@@ -11,7 +11,7 @@ header_links:
 host: https://observability-platform.service.justice.gov.uk
 max_toc_heading_level: 3
 owner_slack_workspace: mojdt
-phase: internal
+phase: INTERNAL
 prevent_indexing: true
 service_link: /
 service_name: Observability Platform

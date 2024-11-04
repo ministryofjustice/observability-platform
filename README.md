@@ -19,7 +19,7 @@ To add an ADR call the `create-adr.sh` script and respond to the queries:
 bash scripts/create-adr.sh
 ```
 
-## Other Observability Platform repositories
+## Other Observability Platform Repositories
 
 | Name | Description |
 |:---:|:---:|

@@ -9,8 +9,7 @@
       "extensions": [
         "EditorConfig.EditorConfig",
         "GitHub.vscode-github-actions",
-        "GitHub.vscode-pull-request-github",
-        "hediet.vscode-drawio"
+        "GitHub.vscode-pull-request-github"
       ],
       "settings": {
         "files.associations": {

@@ -1,0 +1,38 @@
+---
+title: Architecture
+last_reviewed_on: 2024-11-04
+review_in: 3 months
+weight: 0
+---
+
+# <%= current_page.data.title %>
+
+At its core, the Observability Platform is [Amazon Managed Grafana](https://aws.amazon.com/grafana/), which offers a fully managed, single pane of glass view of onboarded accounts' [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/), as well as other SaaS services that offer integration, such as GitHub or Sentry.
+
+Additionally, the Observability Platform also offers:
+
+- Integration with [Amazon Managed Service for Prometheus](https://aws.amazon.com/prometheus/)
+
+- Integration with [AWS X-Ray](https://aws.amazon.com/xray/)
+
+- Alerting with PagerDuty and Slack
+
+## High Level Diagram
+
+![Observability Platform](./src/architecture.svg)
+
+## Environments
+
+The Observability Platform has two environments:
+
+- `development`
+
+- `production` (also known as `alpha`)
+
+The `development` environment is used for platform development and testing.
+
+The `alpha` environment is where all the Observability Platform tenants are onboarded.
+
+## Deployment
+
+Observability Platform is deployed to the [Modernisation Platform](https://user-guide.modernisation-platform.service.justice.gov.uk/), and the source is available [here](https://github.com/ministryofjustice/modernisation-platform-environments/tree/main/terraform/environments/observability-platform).

@@ -1,9 +1,0 @@
-{
-  "absolute": true,
-  "ignore": [
-    "**/.github/workflows/build-test.yml",
-    "*.svg"
-  ],
-  "reporters": ["consoleFull"],
-  "threshold": 0
-}

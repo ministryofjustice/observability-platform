@@ -1,6 +1,6 @@
 # Ministry of Justice Observability Platform
 
-[![Ministry of Justice Repository Compliance Badge](https://github-community.service.justice.gov.uk/repository-standards/api/observability-platform/badge)](https://github-community.service.justice.gov.uk/repository-standards/observability-platform)
+[![Standards Icon]][Standards Link] 
 
 [![Open in Dev Container](https://raw.githubusercontent.com/ministryofjustice/.devcontainer/refs/heads/main/contrib/badge.svg)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ministryofjustice/observability-platform)
 
@@ -24,3 +24,7 @@ This is the Ministry of Justice Observability Platform team's repository for doc
 ### Contributing
 
 The base branch requires all commits to be signed. Learn more about signing commits [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification).
+
+
+[Standards Link]: https://github-community.service.justice.gov.uk/repository-standards/observability-platform "Repo standards badge."
+[Standards Icon]: https://github-community.service.justice.gov.uk/repository-standards/api/observability-platform/badge

@@ -1,6 +1,6 @@
 # Ministry of Justice Observability Platform
 
-[![Standards Icon]][Standards Link] 
+[![Standards Icon]][Standards Link]
 
 [![Open in Dev Container](https://raw.githubusercontent.com/ministryofjustice/.devcontainer/refs/heads/main/contrib/badge.svg)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/ministryofjustice/observability-platform)
 

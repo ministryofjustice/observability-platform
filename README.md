@@ -23,7 +23,7 @@ This is the Ministry of Justice Observability Platform team's repository for doc
 
 ### Contributing
 
-The base branch requires all commits to be signed. Learn more about signing commits [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification).
+The base branch requires all commits to be signed. Learn more about [signing commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification).
 
 
 [Standards Link]: https://github-community.service.justice.gov.uk/repository-standards/observability-platform "Repo standards badge."

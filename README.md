@@ -15,7 +15,7 @@ This is the Ministry of Justice Observability Platform team's repository for doc
 
 ## Other Observability Platform Repositories
 
-| Name  | Description |
+| Name | Description |
 | :---: | :---: |
 | [`observability-platform-grafana-api-key-rotator`](https://github.com/ministryofjustice/observability-platform-grafana-api-key-rotator) | Observability Platform Grafana API key rotator |
 | [`observability-platform-user-guide`](https://github.com/ministryofjustice/observability-platform-user-guide) | Observability Platform user guide |

@@ -1,3 +1,3 @@
 [codespell]
 check-hidden =
-skip = *.svg
+skip = source/architecture/src/architecture.svg,/github/workspace/source/architecture/src/architecture.svg

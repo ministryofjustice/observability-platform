@@ -8,11 +8,11 @@ review_in: 3 months
 
 ## Metadata
 
-| ID   | Created       | Author          | Status       |
-|:----:|:-------------:|:---------------:|:------------:|
-| 0001 | 20/12/2023    | Jacob Woffenden | 🟢 Active    |
+|  ID  |  Created   |     Author      |  Status   |
+| :--: | :--------: | :-------------: | :-------: |
+| 0001 | 20/12/2023 | Jacob Woffenden | 🟢 Active |
 
-We are unable to programatically rotate and consume a Grafana API key in Terraform, therefore we must rotate this externally.
+We are unable to programmatically rotate and consume a Grafana API key in Terraform, therefore we must rotate this externally.
 
 To achieve this, we have created an [AWS Lambda function](https://github.com/ministryofjustice/observability-platform-grafana-api-key-rotator) to automatically recreate the key and upload it AWS Secrets Manager every 14 days.
 
@@ -25,11 +25,12 @@ Should this process fail, the following instructions can be used to rotate it ma
 1. Delete the expired API Key.
 
 1. Generate a new API Key by clicking on the "Add API Key" button, and using the following details:
-  > Key name: `observability-platform-automation`
-  >
-  > Key role: `Admin`
-  >
-  > Time to live: `1209600`
+
+   > Key name: `observability-platform-automation`
+   >
+   > Key role: `Admin`
+   >
+   > Time to live: `1209600`
 
 1. Copy the new API Key to your clipboard.
 

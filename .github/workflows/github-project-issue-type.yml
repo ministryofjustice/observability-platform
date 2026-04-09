@@ -15,6 +15,7 @@ jobs:
   update-github-projects-issue-type:
     runs-on: ubuntu-latest
     name: Update GitHub Projects Issue Type
+    environment: github-project-issue-type
     steps:
       - name: Check Labels
         id: check_labels
